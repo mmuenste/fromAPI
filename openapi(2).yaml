@@ -1,0 +1,113 @@
+openapi: 3.0.0
+info:
+  title: Basic Calculator
+  description: An exercise server, that does basic arithmetic operations.
+  version: 0.0.1
+paths:
+  /v1/ressources/calculator/add:
+    post:
+      summary: Calculates and returns the sum of two numbers and returns it.
+      requestBody:
+        description: The numbers x and y, that are supposed to be summed up.
+        content:
+          applicaton/json:
+            schema:
+              type: object
+              properties:
+                x:
+                  type: number
+                y:
+                  type: number
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Summe:
+                    type: number
+                    description: Sum of the two numbers x and y.
+                
+  /v1/ressources/calculator/sub:
+    post:
+      summary: Calculates and returns the difference of two numbers and returns it.
+      requestBody:
+        description: The numbers x and y; y is subtracted from x.
+        content:
+          applicaton/json:
+            schema:
+              type: object
+              properties:
+                x:
+                  type: number
+                y:
+                  type: number
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Differenz:
+                    type: number
+                    description: Difference of the two numbers x and y.
+                    
+  /v1/ressources/calculator/mul:
+    post:
+      summary: Calculates and returns the product of two numbers and returns it.
+      requestBody:
+        description: The numbers x and y, that are supposed to be multiplicated.
+        content:
+          applicaton/json:
+            schema:
+              type: object
+              properties:
+                x:
+                  type: number
+                y:
+                  type: number
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Produkt:
+                    type: number
+                    description: Product of the two numbers x and y.
+                    
+  /v1/ressources/calculator/div:
+    post:
+      summary: Calculates and returns the quotient of two numbers and returns it.
+      requestBody:
+        description: The numbers x and y; x is divided by y.
+        content:
+          applicaton/json:
+            schema:
+              type: object
+              properties:
+                x:
+                  type: number
+                y:
+                  type: number
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Quotient:
+                    type: number
+                    description: Quotient of the two numbers x and y.
