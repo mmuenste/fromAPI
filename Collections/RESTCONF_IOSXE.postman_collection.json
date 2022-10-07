@@ -1,0 +1,290 @@
+{
+	"info": {
+		"_postman_id": "9bb039b6-f9ad-4b38-bf1e-eb5914ecb37c",
+		"name": "RESTCONF_IOSXE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Web Host Meta Data",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "L1nux_dc",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "student",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://192.168.181.11/.well-known/host-meta",
+					"protocol": "https",
+					"host": [
+						"192",
+						"168",
+						"181",
+						"11"
+					],
+					"path": [
+						".well-known",
+						"host-meta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Restconf",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "L1nux_dc",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "student",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://192.168.181.11/restconf",
+					"protocol": "https",
+					"host": [
+						"192",
+						"168",
+						"181",
+						"11"
+					],
+					"path": [
+						"restconf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Operations",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "L1nux_dc",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "student",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://192.168.181.11/restconf/operations",
+					"protocol": "https",
+					"host": [
+						"192",
+						"168",
+						"181",
+						"11"
+					],
+					"path": [
+						"restconf",
+						"operations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Restconf Capabilities",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "L1nux_dc",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "student",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://192.168.181.11/restconf/data/ietf-restconf-monitoring:restconf-state/capabilities",
+					"protocol": "https",
+					"host": [
+						"192",
+						"168",
+						"181",
+						"11"
+					],
+					"path": [
+						"restconf",
+						"data",
+						"ietf-restconf-monitoring:restconf-state",
+						"capabilities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Yang Modell",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "L1nux_dc",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "student",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/yang-data+json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "https://192.168.181.11/restconf/data/ietf-yang-library:modules-state",
+					"protocol": "https",
+					"host": [
+						"192",
+						"168",
+						"181",
+						"11"
+					],
+					"path": [
+						"restconf",
+						"data",
+						"ietf-yang-library:modules-state"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Config",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "L1nux_dc",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "student",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://192.168.181.11/restconf/operations/cisco-ia:save-config",
+					"protocol": "https",
+					"host": [
+						"192",
+						"168",
+						"181",
+						"11"
+					],
+					"path": [
+						"restconf",
+						"operations",
+						"cisco-ia:save-config"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CPU",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "L1nux_dc",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "student",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/yang-data+json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "https://192.168.181.11/restconf/data/Cisco-IOS-XE-process-cpu-oper:cpu-usage?depth=3",
+					"protocol": "https",
+					"host": [
+						"192",
+						"168",
+						"181",
+						"11"
+					],
+					"path": [
+						"restconf",
+						"data",
+						"Cisco-IOS-XE-process-cpu-oper:cpu-usage"
+					],
+					"query": [
+						{
+							"key": "depth",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,135 @@
+{
+	"info": {
+		"_postman_id": "270f653c-d453-4d7f-a1de-23f7cdc1eba4",
+		"name": "NXAPI_REST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Loggin In",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"aaaUser\": {\n    \"attributes\": {\n      \"name\": \"{{Username}}\",\n      \"pwd\": \"{{Password}}\"\n}}}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{nexus}}/api/aaaLogin.json",
+					"protocol": "https",
+					"host": [
+						"{{nexus}}"
+					],
+					"path": [
+						"api",
+						"aaaLogin.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create VLAN",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"bdEntity\": {\n  \"children\": [\n    {\n      \"l2BD\": {\n        \"attributes\": {\n          \"fabEncap\": \"vlan-102\",\n          \"pcTag\": \"1\"\n}}}]}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{nexus}}/api/mo/sys/bd.json",
+					"protocol": "https",
+					"host": [
+						"{{nexus}}"
+					],
+					"path": [
+						"api",
+						"mo",
+						"sys",
+						"bd.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{nexus}}/api/mo/sys/bd.json?query-target=children&rsp-prop-include=naming-only",
+					"protocol": "https",
+					"host": [
+						"{{nexus}}"
+					],
+					"path": [
+						"api",
+						"mo",
+						"sys",
+						"bd.json"
+					],
+					"query": [
+						{
+							"key": "query-target",
+							"value": "children"
+						},
+						{
+							"key": "rsp-prop-include",
+							"value": "naming-only"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "nexus",
+			"value": "192.168.181.21",
+			"type": "default"
+		},
+		{
+			"key": "Username",
+			"value": "student",
+			"type": "default"
+		},
+		{
+			"key": "Password",
+			"value": "L1nux_dc",
+			"type": "default"
+		}
+	]
+}

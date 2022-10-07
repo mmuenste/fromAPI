@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "141e2a58-e5fd-4a91-a0ba-3a1a2b09ae62",
+		"name": "RESTCONF_NXOS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Aufgabe_1",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "L1nux_dc",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "student",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/yang.data+json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "https://192.168.181.21/restconf/data/openconfig-interfaces:interfaces/interface=eth1%2F4",
+					"protocol": "https",
+					"host": [
+						"192",
+						"168",
+						"181",
+						"21"
+					],
+					"path": [
+						"restconf",
+						"data",
+						"openconfig-interfaces:interfaces",
+						"interface=eth1%2F4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Aufgabe_2",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "L1nux_dc",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "student",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/yang.data+json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "https://192.168.181.21/restconf/data/openconfig-interfaces:interfaces/interface=eth1%2F4/config/description",
+					"protocol": "https",
+					"host": [
+						"192",
+						"168",
+						"181",
+						"21"
+					],
+					"path": [
+						"restconf",
+						"data",
+						"openconfig-interfaces:interfaces",
+						"interface=eth1%2F4",
+						"config",
+						"description"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Aufgabe_3",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true,
+					"content-type": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "L1nux_dc",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "student",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "",
+						"type": "default",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/yang.data+json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"RESTCONF-Übung Aufgabe 3\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://192.168.181.21/restconf/data/openconfig-interfaces:interfaces/interface=eth1%2F4/config",
+					"protocol": "https",
+					"host": [
+						"192",
+						"168",
+						"181",
+						"21"
+					],
+					"path": [
+						"restconf",
+						"data",
+						"openconfig-interfaces:interfaces",
+						"interface=eth1%2F4",
+						"config"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
